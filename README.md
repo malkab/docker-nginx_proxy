@@ -6,6 +6,14 @@ The sole purpose of this image is to create __nginx__ proxies.
 
 Usage
 -----
+To build:
+
+```Shell
+docker built -t="geographica/nginx_proxy" .
+```
+
+Do not upload this image to DockerHub, it makes no sense, for each of its builds are a customized case.
+
 This image configure __nginx__ proxies to dockerized applications. Proxy configurations are in the __conf.d__ folder. A typical proxy looks like this:
 
 ```Shell
