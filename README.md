@@ -9,7 +9,7 @@ Usage
 To build:
 
 ```Shell
-docker built -t="geographica/nginx_proxy" .
+docker built -t="malkab/nginx_proxy" .
 ```
 
 Do not upload this image to DockerHub, it makes no sense, for each of its builds are a customized case.
@@ -19,7 +19,7 @@ This image configure __nginx__ proxies to dockerized applications. Proxy configu
 ```Shell
 server {
   listen 80;
-  server_name geoservers.geographica.gs;
+  server_name whatever.server;
   
   location /gs_a/ {
     proxy_pass http://geoserver:8080/;
@@ -31,7 +31,7 @@ server {
   }
 	
   location /gs_b/ {
-    proxy_pass http://geoserverb:8085/;
+    proxy_pass http://geoserver:8085/;
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection 'upgrade';
@@ -57,7 +57,7 @@ To attach a new dockerized application to the proxy, follow this steps:
 docker stop nginx_proxy ; docker rm -v nginx_proxy ; docker-compose build ; docker-compose up -d
 ```
 
-Also, don't forget to modify the static HTML in _html_ with something funny.
+Also, don't forget to modify the 404 static HTML in _html_ with something funny.
 
 
 localhost usage
