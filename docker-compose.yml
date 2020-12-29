@@ -1,9 +1,9 @@
 nginx:
   build: .
-  restart: always
   container_name: nginx_proxy
   ports:
     - "80:80"
-    - "443:443"
+    # - "443:443"
   external_links:
-    - geoserver
+    - geoserver281viv1
+

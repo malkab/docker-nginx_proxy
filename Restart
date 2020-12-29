@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker stop nginx_proxy ; docker rm -v nginx_proxy ; docker-compose build ; docker-compose up -d
